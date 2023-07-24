@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PagingExample</string>
+    <string name="first_brewed">first brewed at %s</string>
 </resources>

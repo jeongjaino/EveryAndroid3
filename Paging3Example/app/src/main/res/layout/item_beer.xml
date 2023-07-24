@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="item"
+            type="com.jaino.pagingexample.domain.model.Beer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/beerImageView"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    app:imageUrl="@{item.image_url}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/beerItemName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.name}"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/beerImageView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/beerItemFeature"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.tagline}"
+                    android:layout_marginTop="16dp"
+                    android:textStyle="italic"
+                    android:layout_marginHorizontal="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/beerImageView"
+                    app:layout_constraintTop_toBottomOf="@+id/beerItemName" />
+
+                <TextView
+                    android:id="@+id/beerItemContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.description}"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/beerImageView"
+                    app:layout_constraintTop_toBottomOf="@+id/beerItemFeature" />
+
+                <TextView
+                    android:id="@+id/BeerItemFirstBrewed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/first_brewed(item.first_brewed)}"
+                    android:layout_marginVertical="16dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/beerItemContent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
