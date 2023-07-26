@@ -9,11 +9,14 @@ import com.jaino.pagingexample.data.local.database.BeerDatabase
 import com.jaino.pagingexample.data.local.database.BeerRemoteMediator
 import com.jaino.pagingexample.data.local.model.BeerEntity
 import com.jaino.pagingexample.data.remote.service.BeerService
+import com.jaino.pagingexample.data.remote.source.BeerPagingSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
@@ -36,12 +39,27 @@ object AppModule {
         ).build()
     }
 
+    @Singleton
+    @Provides
+    fun provideOkHttpInterceptor(): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addNetworkInterceptor(
+                HttpLoggingInterceptor().apply {
+                    level = HttpLoggingInterceptor.Level.BODY
+                }
+            )
+            .build()
+    }
+
     @Provides
     @Singleton
-    fun provideBeerService(): BeerService{
+    fun provideBeerService(
+        client : OkHttpClient
+    ): BeerService{
         return Retrofit.Builder()
             .baseUrl(BeerService.BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create())
+            .client(client)
             .build()
             .create()
     }
@@ -61,4 +79,17 @@ object AppModule {
             }
         )
     }
+
+    /*@Provides
+    @Singleton
+    fun providesBeerPager(
+        beerService: BeerService
+    ): Pager<Int, BeerEntity>{
+        return Pager(
+            config = PagingConfig(pageSize = 20),
+            pagingSourceFactory = {
+                BeerPagingSource(beerService)
+            }
+        )
+    }*/
 }
