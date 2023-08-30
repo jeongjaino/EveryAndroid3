@@ -122,4 +122,26 @@ internal class ShoppingCartTest{
         // ASSERTION
         assertThat(totalCost).isEqualTo(expectedPriceSum)
     }
+
+    // Private Function Test
+    // Private 함수를 Public으로 열고 @OpenForTesting을 하는 것은 권장하지 않는 방법이다.
+    // 다른 Public 함수를 통해 간접적으로 Private 함수를 검증하는 것이 올바른 방법이다.
+    // 이와 유사하게 Private 프로퍼티를 검증하는 방법 역시 Test 케이스에서 새롭게 프로퍼티를 만들어 검증하는 것이 올바르다.
+
+    @Test
+    fun `존재하지 않는 상품인 경우, isInvalidProduct 함수는 Invalid를 반환해야 한다`(){
+        // GIVEN
+        val product = Product(
+            id = 1231,
+            name = "아이스크림",
+            price = 5.0
+        )
+        shoppingCart.addProduct(product, 5)
+
+        // ACTION
+        val totalCost = shoppingCart.getTotalCost()
+
+        // ASSERTION
+        assertThat(totalCost).isEqualTo(0.0)
+    }
 }
