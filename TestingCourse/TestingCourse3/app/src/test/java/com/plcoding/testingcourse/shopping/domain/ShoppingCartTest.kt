@@ -4,6 +4,7 @@ import assertk.assertFailure
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.RepeatedTest
 import org.junit.jupiter.api.Test
 
 internal class ShoppingCartTest{
@@ -41,6 +42,24 @@ internal class ShoppingCartTest{
 
     @Test
     fun `음수 갯수의 상품을 추가했을 때, 예외를 발생해야 한다`(){
+        // GIVEN
+        val product = Product(
+            id = 1,
+            name = "마카롱",
+            price = 4.0
+        )
+
+        // ASSERTION && ACTION
+        assertFailure {
+            shoppingCart.addProduct(product, -4)
+        }
+    }
+
+    // RepeatedTest는 Flaky Test에서 사용된다.
+    // Flaky Test는 테스트 코드가 실행될 때 때로는 통과하고 때로는 실패하는 테스트를 가리킨다.
+    // 문제에 대한 원인을 찾기 힘들 때, 해당 RepeatedTest를 통해 해결할 수 있다.
+    @RepeatedTest(100)
+    fun `음수 갯수의 상품을 100번 추가했을 때, 모두 예외를 발생해야 한다`(){
         // GIVEN
         val product = Product(
             id = 1,
