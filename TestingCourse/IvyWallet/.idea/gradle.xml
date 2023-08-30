@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="jbr-17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/android" />
+            <option value="$PROJECT_DIR$/android/billing" />
+            <option value="$PROJECT_DIR$/android/common" />
+            <option value="$PROJECT_DIR$/android/file-system" />
+            <option value="$PROJECT_DIR$/android/notifications" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app-locked" />
+            <option value="$PROJECT_DIR$/backup" />
+            <option value="$PROJECT_DIR$/backup/api" />
+            <option value="$PROJECT_DIR$/backup/base" />
+            <option value="$PROJECT_DIR$/backup/impl" />
+            <option value="$PROJECT_DIR$/backup/old" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/categories" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/common/android-test" />
+            <option value="$PROJECT_DIR$/common/main" />
+            <option value="$PROJECT_DIR$/common/test" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core/data-model" />
+            <option value="$PROJECT_DIR$/core/domain" />
+            <option value="$PROJECT_DIR$/core/exchange-provider" />
+            <option value="$PROJECT_DIR$/core/persistence" />
+            <option value="$PROJECT_DIR$/core/ui" />
+            <option value="$PROJECT_DIR$/debug" />
+            <option value="$PROJECT_DIR$/design-system" />
+            <option value="$PROJECT_DIR$/drive" />
+            <option value="$PROJECT_DIR$/drive/google-drive" />
+            <option value="$PROJECT_DIR$/exchange-rates" />
+            <option value="$PROJECT_DIR$/formula" />
+            <option value="$PROJECT_DIR$/formula/domain" />
+            <option value="$PROJECT_DIR$/formula/persistence" />
+            <option value="$PROJECT_DIR$/formula/ui" />
+            <option value="$PROJECT_DIR$/main" />
+            <option value="$PROJECT_DIR$/main/accounts" />
+            <option value="$PROJECT_DIR$/main/bottom-bar" />
+            <option value="$PROJECT_DIR$/main/customer-journey" />
+            <option value="$PROJECT_DIR$/main/home" />
+            <option value="$PROJECT_DIR$/main/impl" />
+            <option value="$PROJECT_DIR$/main/more-menu" />
+            <option value="$PROJECT_DIR$/math" />
+            <option value="$PROJECT_DIR$/navigation" />
+            <option value="$PROJECT_DIR$/network" />
+            <option value="$PROJECT_DIR$/onboarding" />
+            <option value="$PROJECT_DIR$/parser" />
+            <option value="$PROJECT_DIR$/photo-frame" />
+            <option value="$PROJECT_DIR$/resources" />
+            <option value="$PROJECT_DIR$/settings" />
+            <option value="$PROJECT_DIR$/sync" />
+            <option value="$PROJECT_DIR$/transaction" />
+            <option value="$PROJECT_DIR$/widgets" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
