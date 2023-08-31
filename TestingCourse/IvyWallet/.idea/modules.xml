@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Ivy_Wallet.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Ivy_Wallet.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/domain/Ivy_Wallet.core.domain.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core/domain/Ivy_Wallet.core.domain.unitTest.iml" />
     </modules>
   </component>
 </project>

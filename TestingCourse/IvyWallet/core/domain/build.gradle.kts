@@ -4,6 +4,8 @@ import com.ivy.buildsrc.FunctionalProgramming
 import com.ivy.buildsrc.Hilt
 import com.ivy.buildsrc.Lifecycle
 import com.ivy.buildsrc.Testing
+import com.ivy.buildsrc.JUnit5
+import com.ivy.buildsrc.AssertK
 
 plugins {
     `android-library`
@@ -25,6 +27,7 @@ dependencies {
     ComposeTesting(api = false) // for IdlingResource
     Testing()
     Coroutines(api = false)
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 }
 android {
     namespace = "com.ivy.core.domain"
